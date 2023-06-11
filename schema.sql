@@ -5,7 +5,7 @@ USE company_db;
 
 CREATE TABLE departments (
     id INT NOT NULL,
-    name VARCHAR(30) NOT NULL
+    name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE roles (
@@ -16,5 +16,7 @@ CREATE TABLE roles (
 CREATE TABLE employees (
     id INT NOT NULL,
     name VARCHAR(40) NOT NULL,
+    department VARCHAR(40) NOT NULL,
+    role VARCHAR(30) NOT NULL,
     active BOOLEAN NOT NULL
 );
