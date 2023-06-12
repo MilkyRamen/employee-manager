@@ -18,6 +18,7 @@ CREATE TABLE employees (
     name VARCHAR(40) NOT NULL,
     department INT,
     role VARCHAR(30) NOT NULL,
+    salary INT NOT NULL,
     active BOOLEAN NOT NULL,
     FOREIGN KEY (department)
     REFERENCES department(id)
