@@ -63,18 +63,22 @@ inquirer
         },
     ])
     .then((response) => {
+        // view all departments
         if (response.dbChoices === 1) {
             db.query('SELECT * FROM department', function (err, results){
                 console.log(results);
             });
+        // view all roles
         } else if (response.dbChoices === 2) {
             db.query('SELECT * FROM roles', function (err, results){
                 console.log(results);
             });
+        // view all employees
         } else if (response.dbChoices === 3) {
             db.query('SELECT * FROM employees', function (err, results){
                 console.table(results);
             });
+        // add department
         } else if (response.dbChoices === 4) {
             inquirer
                 .prompt([
@@ -99,6 +103,7 @@ inquirer
                         });
                     });
                 });
+        // add role
         } else if (response.dbChoices === 5) {
             inquirer
                 .prompt([
@@ -133,6 +138,7 @@ inquirer
                         });
                     });   
                 });
+        // add new employee
         } else if (response.dbChoices === 6) {
             inquirer
                 .prompt([
@@ -197,6 +203,7 @@ inquirer
                                 });
                         });
                 });
+        // update employees role
         } else if (response.dbChoices === 7) {
             inquirer
                 .prompt([
