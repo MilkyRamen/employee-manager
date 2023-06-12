@@ -3,8 +3,8 @@ DROP DATABASE IF EXISTS company_db;
 CREATE DATABASE company_db;
 USE company_db;
 
-CREATE TABLE departments (
-    id INT NOT NULL,
+CREATE TABLE department (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
 
@@ -16,7 +16,9 @@ CREATE TABLE roles (
 CREATE TABLE employees (
     id INT NOT NULL,
     name VARCHAR(40) NOT NULL,
-    department VARCHAR(40) NOT NULL,
+    department INT,
     role VARCHAR(30) NOT NULL,
-    active BOOLEAN NOT NULL
+    active BOOLEAN NOT NULL,
+    FOREIGN KEY (department)
+    REFERENCES department(id)
 );
